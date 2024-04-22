@@ -18,8 +18,8 @@ export default function Navbar() {
               <span className="sr-only">Search</span>
             </button>
             <div className="relative hidden md:flex ">
-              <input type="text" id="search-navbar" className="block w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-11/12 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 px-9" placeholder='Search' />
-              <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded transition duration-150 ease-in-out">
+              <input type="text" id="search-navbar" className="block w-full sm:w-full md:w-1/2 lg:w-1/2 xl:w-11/12 ps-10 text-sm text-gray-900 border-4 border-gray-300 rounded-l-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 px-9" placeholder='Search' />
+              <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-r-lg transition duration-150 ease-in-out">
                 Search
               </button>
             </div>
@@ -85,4 +85,3 @@ export default function Navbar() {
     </>
   );
 }
-
