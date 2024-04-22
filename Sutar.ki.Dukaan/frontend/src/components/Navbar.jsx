@@ -40,47 +40,22 @@ export default function Navbar() {
               </div>
               <input type="text" id="search-navbar" className="block w-3/4 p-1 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
             </div>
-            <ul className="flex pt-2 font-mono text-2xl font-bold">
+            <ul className="flex pt-2 px-3 font-mono text-2xl font-bold">
               <li>
-                <a href="#" className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                <button className='py-1 px-8 my-2 mx-1 text-gray-900 bg-cyan-400 rounded-l-lg dark:md:hover:bg-emerald-400'>Shop</button>
               </li>
               <li>
-                <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                <button className='py-1 px-8 my-2 mx-1 text-gray-900 bg-cyan-400 dark:md:hover:bg-emerald-400'>About</button>
               </li>
               <li>
-                <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                <button className="py-1 px-8 my-2 mx-1 text-gray-900 bg-cyan-400 rounded-r-lg dark:md:hover:bg-emerald-400">Services</button>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <section>
-        <div class="bg-black text-white ">
-          <div class="container mx-auto flex flex-col md:flex-row items-center my-9 -mx-10 md:my-24">
-            <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-6">
-              <h1 class="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">Sutar.Ki.Dukaan</h1>
-              <h2 class="text-3xl md:text-3xl leading-relaxed md:leading-snug mb-2">Your One-Stop Shop for Products
-              </h2>
-              <p class="text-sm md:text-base text-gray-50 mb-4">Explore your favourite clothings and
-                register now and explore your Dressing Sense.</p>
-                <button class="transition duration-700 ease-in-out bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border-5 border-yellow-300 hover:bg-white" href="">Button C</button>
-            </div>
-            <div class="h-48 flex flex-wrap content-center">
-              <div class="flex justify-center items-start">
-                <div class="flex flex-col items-center mx-2 md:mx-0">
-                  <img class="hover: inline-block mx-10 md:mt-0 p-1 md:p-8 w-80 h-80 transform -rotate-40 rounded-full border-solid border-8 border-#e800ff-500 border-teal-400 hover:border-dotted drop-shadow-2xl" src="https://blenderartists.org/uploads/default/original/4X/f/4/d/f4d966e7afb4eea55e94b3a723e22deb5efba998.jpeg" />
-                </div>
-                <div class="flex flex-col items-center">
-                  <img class="inline-block mt-78 xl:block w-60 h-60 rounded-full border-solid border-8 border-#e800ff-500 border-teal-400 hover:border-dotted" src="https://i.ibb.co/1mJg65B/Untitled-design.png" />
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
     </>
   );

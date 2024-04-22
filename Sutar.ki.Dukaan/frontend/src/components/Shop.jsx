@@ -1,10 +1,15 @@
 import React from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import Cards from './Cards';
 
 function Shop() {
   return (
-    <div>
-      <h1>Shop Page</h1>
-    </div>
+    <>
+      <Navbar />
+      <Cards />
+      <Footer />
+    </>
   );
 }
 

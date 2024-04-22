@@ -1,12 +1,12 @@
 import './App.css';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Shop from './components/Shop';
+//import Home from './components/Home';
+
 
 function App() {
   return (
     <>
-      <Navbar/> {/* Render Navbar component */}
-      <Footer/>
+    <Shop/>    
     </>
   );
 }
