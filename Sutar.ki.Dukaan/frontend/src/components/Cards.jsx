@@ -14,7 +14,7 @@ function Cards() {
 
   return (
     <div className="container mx-auto p-8 my-6">
-      <h1 className="text-2xl font-bold mb-4"></h1>
+      <h1 className="text-4xl font-bold text-white mb-4 pt-4 justify-center">Our Products</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {cards.map((card, index) => (
           <div key={index} className="bg-gradient-to-r from-[#24ff5e] to-blue-500 rounded-lg shadow-md p-1">
