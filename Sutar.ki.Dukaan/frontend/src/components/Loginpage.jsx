@@ -6,7 +6,7 @@ import Footer from './Footer';
 export default function Loginpage() {
   const navigate = useNavigate();
   function handleClick() {
-    navigate("/")
+    navigate("/SignupPage")
   }
 
   return (
@@ -34,7 +34,9 @@ export default function Loginpage() {
           </form>
         <div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
          <p className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold'>you don't have an Account yet ?</p>
-         <a href='' className='bg-gradient-to-r from-indigo-500 via-indigo-500 to-indigo-500 font-bold text-black'>Sign Up</a>
+         <Link to="/SignupPage">
+         <a className='bg-gradient-to-r from-indigo-500 via-indigo-500 to-indigo-500 font-bold text-black'>Sign Up</a>
+         </Link>
          <a href='' className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-black pl-16'>Forgot Password</a>
         </div>
         </div>

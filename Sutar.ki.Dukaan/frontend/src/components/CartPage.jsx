@@ -13,6 +13,7 @@ export default function CartPage() {
   }
 
   return (
+    <>
     <nav className="bg-gray border-gray-200 dark:bg-gray-1000 flex justify-start items-center px-6 py-2">
       <div className="flex items-center space-x-3 rtl:space-x-reverse">
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -32,7 +33,7 @@ export default function CartPage() {
             <button className="py-1 px-8 my-2 mx-1 text-gray-900 bg-cyan-400 rounded-r-lg dark:md:hover:bg-emerald-400" onClick={handleCart}>Cart</button>
           </li>
         </ul>
-      
-    </nav>
+      </nav>
+      </>
   );
 }

@@ -7,9 +7,8 @@ import Footer from './Footer';
 function Shop() {
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <img src="https://i.postimg.cc/vT8Vhbcj/sutarkidukan.png" alt="sutarkidukan" className="pt-3 bg-clip-border mx-auto object-fill h-1000 w-3000" />
-
       <Cards />
       <Footer />
     </>
