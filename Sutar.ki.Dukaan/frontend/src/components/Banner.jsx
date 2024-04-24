@@ -6,6 +6,10 @@ export default function Banner() {
   function handleclick() {
     navigate("/login")
   }
+
+  function handleclick_signup() {
+    navigate("/SignupPage")
+  }
   return (
     <section>
       <div class="bg-black text-white ">
@@ -18,7 +22,7 @@ export default function Banner() {
               register now and explore your Dressing Sense.</p>
             <div class="flex">
               <button class="transition duration-700 ease-in-out bg-transparent hover:bg-yellow-300 text-yellow-300 font-bold hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border-5 border-yellow-300 hover:bg-white mr-2" onClick={handleclick}>Login</button>
-              <button class="transition duration-700 ease-in-out bg-transparent hover:bg-yellow-300 text-yellow-300 font-bold hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border-5 border-yellow-300 hover:bg-white" onClick={handleclick}>Signup</button>
+              <button class="transition duration-700 ease-in-out bg-transparent hover:bg-yellow-300 text-yellow-300 font-bold hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border-5 border-yellow-300 hover:bg-white" onClick={handleclick_signup}>Signup</button>
             </div>
 
           </div>

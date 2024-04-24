@@ -8,8 +8,10 @@ export default function Navbar() {
   function handleClick() {
     navigate("/Shop")
   }
+  function handleCart() {
+    navigate("/CartPage")
+  }
 
-  
   return (
 
     <>
@@ -57,7 +59,7 @@ export default function Navbar() {
                 <button className='py-1 px-8 my-2 mx-1 text-gray-900 bg-cyan-400 dark:md:hover:bg-emerald-400'>About</button>
               </li>
               <li>
-                <button className="py-1 px-8 my-2 mx-1 text-gray-900 bg-cyan-400 rounded-r-lg dark:md:hover:bg-emerald-400">Cart</button>
+                <button className="py-1 px-8 my-2 mx-1 text-gray-900 bg-cyan-400 rounded-r-lg dark:md:hover:bg-emerald-400" onClick={handleCart}>Cart</button>
               </li>
             </ul>
           </div>

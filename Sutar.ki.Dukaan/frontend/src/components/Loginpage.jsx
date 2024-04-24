@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
+//import Navbar from './Navbar';
 import Footer from './Footer';
 
 export default function Loginpage() {
@@ -40,8 +40,6 @@ export default function Loginpage() {
         </div>
       </div>
       <button class="bg-white text-black hover:bg-gray-100 border border-gray-300 py-2 px-4 absolute bottom-0 right-0 mb-20 mr-40 font-bold rounded-lg shadow" onClick={handleClick}>Back</button>
-
-
       <Footer/>
     </>
   );
