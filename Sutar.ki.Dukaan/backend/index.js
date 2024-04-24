@@ -13,3 +13,8 @@ app.get(
         res.status(200).send("hello");
     }
 )
+
+app.get(
+    "/SignupPage",(req,res)=>{
+      res.status(200).send("welcom on signup");
+    });
