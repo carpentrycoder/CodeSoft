@@ -20,13 +20,14 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-gray border-gray-200 dark:bg-gray-1000">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+        <div className="px-21 max-w-screen-xl flex justify-between flex-wrap items-center  mx-auto">
           <div className="flex items-center space-x-3 rtl:space-x-reverse">
             <Link to="/" className="flex items-center space-x-3">
               <img src="https://i.ibb.co/V0ymnXq/logo-removebg-preview.png" alt="logo-removebg-preview" className="h-8" />
               <span className="self-center text-3xl font-mono text-teal-300 font-bold">SUTAR.KI.DUKAAN</span>
             </Link>
           </div>
+          
           <div className="flex md:order-2">
             <button type="button" className="inline-flex items-center p-2 w-18 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" onClick={toggleMenu} aria-expanded={isMenuOpen}>
               <span className="sr-only">Open main menu</span>
@@ -56,7 +57,11 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-        </div>
+          <form className="flex" role="search">
+            <input className="form-input border-1 mx-2 mr-3 border-white rounded-lg pl-5 text-white" type="search" placeholder="Search" aria-label="Search" />
+            <button className="btn btn-primary" type="submit">Search</button>
+          </form>
+          </div>
       </nav>
     </>
   );
