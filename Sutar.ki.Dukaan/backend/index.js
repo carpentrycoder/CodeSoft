@@ -9,6 +9,7 @@ app.use(express.json());
 
 app.use("/",router)
 app.use("/SignupPage",router);
+app.use("/login",router);
 
 
 connectDb().then(()=>{
