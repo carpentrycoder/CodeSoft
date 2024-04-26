@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 
 const app =  express()
@@ -7,7 +8,7 @@ const connectDb = require("./database");
 app.use(express.json());
 
 app.use("/",router)
-app.use("/Signup",router);
+app.use("/SignupPage",router);
 
 
 connectDb().then(()=>{
@@ -17,8 +18,8 @@ app.listen(
 )
 })
 
-// app.get(
-//     "/",
+//  app.get(
+//    "/",
 //     (req,res)=>{
 //         res.status(200).send("hello");
 //     }
