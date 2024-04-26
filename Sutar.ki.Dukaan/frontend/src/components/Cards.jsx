@@ -10,10 +10,13 @@ function Cards() {
 
   return (
     <div className="container mx-auto p-8 my-6">
+      <div>
       <h1 className="text-4xl font-bold text-white mb-4 pt-4 justify-center">Our Products</h1>
+      </div>
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 pt-4">
         {cards.map((card, index) => (
-          <a key={index} href="#" className="block rounded-lg p-4 shadow-xl shadow-indigo-500 hover:shadow-[#facc15]">
+          <div key={index} href="#" className="block rounded-lg p-4 shadow-xl shadow-indigo-500 hover:shadow-[#facc15]">
             <img
               src={card.imageUrl}
               alt={card.title}
@@ -33,7 +36,7 @@ function Cards() {
                 Add To Cart
               </button>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>

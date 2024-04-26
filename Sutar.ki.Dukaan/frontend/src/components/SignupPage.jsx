@@ -17,7 +17,7 @@ export default function SignupPage() {
           <span className="self-center text-3xl font-mono text-teal-300 font-bold">SUTAR.KI.DUKAAN</span>
         </Link>
       </nav>
-      <div className="flex justify-center items-center py-5 pt-1 bg-black">
+      <div className="flex justify-center items-center py-5 pt-4 bg-black">
         <div className="bg-opacity-80 p-8 rounded-lg shadow-lg z-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           <h1 className="text-3xl font-bold justify-center text-white mb-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Sign Up</h1>
           <form className="space-y-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
@@ -50,7 +50,7 @@ export default function SignupPage() {
         </div>
       </div> 
       <button className="bg-white text-black hover:bg-gray-100 border border-gray-300 py-2 px-4 absolute bottom-0 right-0 mb-20 mr-40 font-bold rounded-lg shadow" onClick={handleClick}>Back</button>
-      <Footer />
+      <Footer className="pb-6"/>
     </>
   );
 }

@@ -6,7 +6,7 @@ import Footer from './Footer';
 export default function Loginpage() {
   const navigate = useNavigate();
   function handleClick() {
-    navigate("/SignupPage")
+    navigate("/")
   }
 
   return (
