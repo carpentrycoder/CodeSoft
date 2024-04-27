@@ -5,6 +5,7 @@ const app =  express()
 const router = require('./routes/auth-router');
 const connectDb = require("./database");
 
+
 app.use(express.json());
 
 app.use("/",router)
