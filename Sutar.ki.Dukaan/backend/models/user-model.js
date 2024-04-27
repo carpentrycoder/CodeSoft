@@ -1,7 +1,8 @@
 require('dotenv').config();
 const { request } = require("express");
 const mongoose = require("mongoose");
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+
 
 
 const userSchema = new mongoose.Schema({
@@ -32,7 +33,7 @@ userSchema.methods.generateToken = async function() {
     try{
         return jwt.sign({
             userID: this._id.toString(),
-            email: this.email.email,
+            email: this.email,
             isAdmin: this.isAdmin,
         },
         process.env.JWT_SECRET_KEY, {

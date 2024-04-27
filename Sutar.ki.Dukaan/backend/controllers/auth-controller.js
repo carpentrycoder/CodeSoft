@@ -55,7 +55,7 @@ const login = async (req, res) => {
         }
         const user = await bcrypt.compare(password,userlogin.password);
         if(user){
-            res.status(700).json({ 
+            res.status(201).json({ 
                 msg:"login successfull !!",
                 token:await userlogin.generateToken(),
                 userId:userlogin._id.toString(),
