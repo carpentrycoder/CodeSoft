@@ -1,7 +1,16 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+import useBasket from './useBasket';
 
-function Cards() {
-   const cards =  [
+export default function Cards() {
+  const navigate = useNavigate();
+  const { addToBasket } = useBasket();
+
+  function handleCart() {
+    navigate("/CartPage");
+  }
+
+  const cards =  [
     {
       id: 1,
       category: 'mobiles',
@@ -91,8 +100,8 @@ function Cards() {
       amazonLink: '',
       description: '',
       price: '100Rs'
-  },
-  {
+    },
+    {
       id: 2,
       category: 'gaming',
       title: 'Zebronics Gaming Keyboard',
@@ -100,8 +109,8 @@ function Cards() {
       amazonLink: '',
       description: '',
       price: '100Rs.'
-  },
-  {
+    },
+    {
       id: 3,
       category: 'gaming',
       title: 'The EvoFox Elite Ops Wireless Gamepad',
@@ -109,8 +118,8 @@ function Cards() {
       amazonLink: '',
       description: '',
       price: '100Rs.'
-  },
-  {
+    },
+    {
       id: 4,
       category: 'gaming',
       title: 'SAVYA HOME Gaming Chair & Headset',
@@ -118,22 +127,23 @@ function Cards() {
       amazonLink: '',
       description: '',
       price: '100Rs.'
-  }
-
-
-  ]
+    }
+  ];
 
   return (
     <div className="container mx-auto p-8 my-6">
-      <div>
-      <h1 className="text-4xl font-bold text-white mb-4 pt-4 justify-center">Our Products</h1>
+      <div className="flex justify-between">
+        <h1 className="text-4xl font-bold text-white mb-4 pt-4 justify-center">Our Products</h1>
+        <button className="text-2xl font-semibold rounded-lg w-24 h-12 py-2 px-4 bg-yellow-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50" onClick={handleCart}>
+          Cart
+        </button>
       </div>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 pt-4">
         {cards.map((card, index) => (
           <div key={index} href="#" className="block rounded-lg p-4 shadow-xl shadow-indigo-500 hover:shadow-[#facc15]">
             <img
-              src={card.imageUrl}
+              src={card.imgSrc} 
               alt={card.title}
               className="h-56 w-full rounded-md object-cover"
             />
@@ -147,7 +157,7 @@ function Cards() {
                   <dd className="text-lg font-semibold m-2 text-white bg-[#000000]">{card.price}</dd>
                 </div>
               </dl>
-              <button className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">
+              <button className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" onClick={() => addToBasket(card)}>
                 Add To Cart
               </button>
             </div>
@@ -157,5 +167,3 @@ function Cards() {
     </div>
   );
 }
-
-export default Cards;

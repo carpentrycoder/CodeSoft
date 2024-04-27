@@ -1,16 +1,30 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import useBasket from './useBasket'; // Import the useBasket hook
 
 export default function CartPage() {
   const navigate = useNavigate();
+  const { basket, removeFromBasket, addToBasket } = useBasket();
+  const location = useLocation();
+
+   // Retrieve basket data from location state
+   const { basket: locationBasket } = location.state || {};
+
+   // Add the items from locationBasket to the basket on mount
+  React.useEffect(() => {
+    if (locationBasket) {
+      locationBasket.forEach(item => addToBasket(item));
+    }
+  },  [locationBasket, addToBasket]);
 
   function handleClick() {
     navigate("/Shop");
   }
 
+
   function handleCart() {
-    navigate("/CartPage");
-  }
+    navigate("/CartPage", { state: { basket } }); 
+   }
 
   return (
     <>
@@ -34,6 +48,18 @@ export default function CartPage() {
           </li>
         </ul>
       </nav>
-      </>
+
+      <div>
+        <h2>Your Cart</h2>
+        <ul>
+          {basket.map((item) => (
+            <li key={item.id}>
+              {item.title} - {item.price}
+              <button onClick={() => removeFromBasket(item.id)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Cards from './Cards';
-import Banner from './Banner'
+//import Banner from './Banner'
 import Footer from './Footer';
 
 function Shop() {
