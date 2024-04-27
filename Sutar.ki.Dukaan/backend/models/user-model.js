@@ -22,6 +22,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true, // Corrected typo: require -> required
     },
+    Address:{
+        type: String,
+        require: true, // Corrected typo: require -> required
+    },
     isAdmin:{
         type: Boolean,
         default: false,

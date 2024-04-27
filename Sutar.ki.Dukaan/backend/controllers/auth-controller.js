@@ -15,7 +15,7 @@ const home = async (req, res) => {
 
 const SignupPage = async (req, res) => {
     try {
-        const { username, email, phone, password } = req.body;
+        const { username, email, phone, password , Address } = req.body;
 
         // Check if user already exists
         const userExist = await User.findOne({ email });
