@@ -1,14 +1,11 @@
-// middleware.js
-const { SignupSchema } = require("../validators/auth-validate");
-
-const validateMiddleware = async (req, res, next) => {
-    try {
-        const parsedBody = await SignupSchema.parseAsync(req.body);
-        req.body = parsedBody;
+const  validate = (schema) => async (req,res,next)=>{
+    try{
+        const parseBody = await schema.parseAsync(req.body);
+        req.body = parseBody;
         next();
-    } catch (error) {
-        res.status(400).json({ msg: error.message });
+    } catch(error) {
+        res.status(400).json({msg:"validaion failed"});
     }
 };
 
-module.exports = validateMiddleware;
+module.exports = validate;
