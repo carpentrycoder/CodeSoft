@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-gray border-gray-200 dark:bg-gray-1000">
+      <nav className="justify-center bg-gray border-gray-200 dark:bg-gray-1000">
         <div className="px-21 max-w-screen-xl flex justify-between flex-wrap items-center  mx-auto">
           <div className="flex items-center space-x-3 rtl:space-x-reverse">
             <Link to="/" className="flex items-center space-x-3">

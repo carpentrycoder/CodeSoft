@@ -1,11 +1,10 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-import useBasket from './useBasket';
+//import useBasket from './useBasket';
 
 export default function Cards() {
   const navigate = useNavigate();
-  const { addToBasket } = useBasket();
-
+  
   function handleCart() {
     navigate("/CartPage");
   }
@@ -93,7 +92,7 @@ export default function Cards() {
       price: '89999',
     },
     {
-      id: 1,
+      id: 11,
       category: 'gaming',
       title: 'Cyberpunk wireless Controller',
       imgSrc: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSoeaUNxAfDqKvI1xEiSlsYF_t8V1NHpLaC-CFcUXnb86w6REtAdMPBwNKZMyZ2NB3Po-wiuwJPubJ8alKxrzHnriUB2dBhIQ&usqp=CAE',
@@ -102,7 +101,7 @@ export default function Cards() {
       price: '100Rs'
     },
     {
-      id: 2,
+      id: 12,
       category: 'gaming',
       title: 'Zebronics Gaming Keyboard',
       imgSrc: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTmZHtI3HxjjaeZv_0dv2QRinDOe2rGnKphJFwPmaO9Tu-p7EeEVYNMSspTYczSR8PHsPk_Sntn9ps387stgqD94UMQI62gf8rHLU0RPcrzxaXzKDMCPg88rg&usqp=CAE',
@@ -111,7 +110,7 @@ export default function Cards() {
       price: '100Rs.'
     },
     {
-      id: 3,
+      id: 13,
       category: 'gaming',
       title: 'The EvoFox Elite Ops Wireless Gamepad',
       imgSrc: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTb13TyCBYvODyuemm34w6-vJ1I5WKIhDn_V91akdm_kPEcmeY7HA1_cCl1TdvT_olK1Qw9H7LTrT4AyYDiHbwvGFpJh3Akl5SKDLdzZnUxvk0bozjaChl_&usqp=CAE',
@@ -120,7 +119,7 @@ export default function Cards() {
       price: '100Rs.'
     },
     {
-      id: 4,
+      id: 14,
       category: 'gaming',
       title: 'SAVYA HOME Gaming Chair & Headset',
       imgSrc: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQGSTMVpAp-sdFA83pjQK8765jixawuUZHKXCMS4Xtbbt5SRDWNNp_WQu5lPGNVO8YUw7kld_KHNYspLKhHLNDEZ8Sp4OOfR9t4Oaxh8I3S',
@@ -139,7 +138,18 @@ export default function Cards() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 pt-4">
+      <div className="flex justify-between border-b-8 border-indigo-500 space-x-4">
+
+        <button className="flex-1 bg-indigo-500 text-white px-3 py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Button 1</button>
+        <button className="flex-1 bg-indigo-500 text-white px-4 py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Button 2</button>
+        <button className="flex-1 bg-indigo-500 text-white px-4 py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Button 3</button>
+        <button className="flex-1 bg-indigo-500 text-white px-4 py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Button 4</button>
+        <button className="flex-1 bg-indigo-500 text-white px-4 py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Button 5</button>
+      </div>
+
+      
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 pt-5 ">
         {cards.map((card, index) => (
           <div key={index} href="#" className="block rounded-lg p-4 shadow-xl shadow-indigo-500 hover:shadow-[#facc15]">
             <img
@@ -157,7 +167,7 @@ export default function Cards() {
                   <dd className="text-lg font-semibold m-2 text-white bg-[#000000]">{card.price}</dd>
                 </div>
               </dl>
-              <button className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" onClick={() => addToBasket(card)}>
+              <button className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" onClick={handleCart}>
                 Add To Cart
               </button>
             </div>
