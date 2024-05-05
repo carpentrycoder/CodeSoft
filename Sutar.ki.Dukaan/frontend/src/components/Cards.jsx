@@ -24,7 +24,7 @@ export default function Cards({ data = cards, setData }) {
   }
 
   return (
-    <div className="container mx-auto p-8 my-6">
+    <div className="container mx-auto p-8 py-8 my-6">
       <div className="flex flex-col sm:flex-row items-center justify-between">
         <h1 className="text-4xl font-bold text-white mb-4 pt-4">Our Products</h1>
         <button className="text-2xl font-semibold rounded-lg w-24 h-12 py-2 px-4 bg-yellow-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 mt-4 sm:mt-0">
@@ -43,7 +43,7 @@ export default function Cards({ data = cards, setData }) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 pt-5 ">
         {filteredData.map((card, index) => (
-          <Link to={`/product_detail/${card.id}`} key={card.id} href="#" className="block rounded-lg p-4 shadow-xl shadow-indigo-500 hover:shadow-[#facc15]">
+          <div to={`/product_detail/${card.id}`} key={card.id} href="#" className="block rounded-lg p-4 shadow-xl shadow-indigo-500 hover:shadow-[#facc15]">
             <img
               src={card.imgSrc}
               alt={card.title}
@@ -59,11 +59,16 @@ export default function Cards({ data = cards, setData }) {
                   <dd className="text-lg font-semibold m-2 text-white bg-[#000000]">{card.price}</dd>
                 </div>
               </dl>
+              <div className="flex">
+              <Link to={`/product_detail/${card.id}`} className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" onClick={handleCart}>
+                View Product
+              </Link>
               <button className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" onClick={handleCart}>
                 Add To Cart
               </button>
+              </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

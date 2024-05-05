@@ -9,8 +9,10 @@ export default function Product_Detail() {
   const product = cards.find(card => card.id === parseInt(id));
 
   function handleClick() {
-    navigate("/Shop");
+    navigate("/shop");
   }
+
+
 
   return (
     <div>
