@@ -1,42 +1,51 @@
-import React from "react";
-import { Link , useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import { cards } from './data';
 
-export default function Cards({ data, setData }) {
+export default function Cards({ data = cards, setData }) {
+  const [filteredData, setFilteredData] = useState(data);
 
   const filterByCategory = (category) => {
+    if (category === '') {
+      setFilteredData(data); // Reset filteredData to the original data array
+    } 
+    else
+    {
     const element = data.filter((card) => card.category === category);
-    setData(element);
+    setFilteredData(element);
     console.log(element);
+    }
   }
 
   const navigate = useNavigate();
-  
+
   function handleCart() {
     navigate("/CartPage");
   }
-   
-  
 
   return (
     <div className="container mx-auto p-8 my-6">
-      <div className="flex justify-between">
-        <h1 className="text-4xl font-bold text-white mb-4 pt-4 justify-center">Our Products</h1>
-        <button className="text-2xl font-semibold rounded-lg w-24 h-12 py-2 px-4 bg-yellow-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50" onClick={handleCart}>
+      <div className="flex flex-col sm:flex-row items-center justify-between">
+        <h1 className="text-4xl font-bold text-white mb-4 pt-4">Our Products</h1>
+        <button className="text-2xl font-semibold rounded-lg w-24 h-12 py-2 px-4 bg-yellow-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 mt-4 sm:mt-0">
           Cart
         </button>
       </div>
 
+
       <div className="flex flex-wrap justify-between border-b-2 border-indigo-500 sm:space-x-4">
-        <button className="w-full sm:w-auto bg-indigo-500 text-white px-3 py-2 sm:px-4 sm:py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600" onClick={() => filterByCategory('mobiles')}>Mobiles</button>
-        {/* Add buttons for other categories */}
+        <button className="w-full sm:w-auto bg-indigo-500  px-5 py-2 sm:px-4 sm:py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600 text-neutral-50 font-semibold text-xl " onClick={() => filterByCategory('')}>All Products</button>
+        <button className="w-full sm:w-auto bg-indigo-500  px-5 py-2 sm:px-4 sm:py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600 text-neutral-50 font-semibold text-xl " onClick={() => filterByCategory('mobiles')}>Mobiles</button>
+        <button className="w-full sm:w-auto bg-indigo-500  px-5 py-2 sm:px-4 sm:py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600 text-neutral-50 font-semibold text-xl " onClick={() => filterByCategory('laptops')}>Laptops</button>
+        <button className="w-full sm:w-auto bg-indigo-500  px-5 py-2 sm:px-4 sm:py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600 text-neutral-50 font-semibold text-xl " onClick={() => filterByCategory('tablets')}>Tablets</button>
+        <button className="w-full sm:w-auto bg-indigo-500  px-5 py-2 sm:px-4 sm:py-2 gap-2 rounded-t-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600 text-neutral-50 font-semibold text-xl " onClick={() => filterByCategory('gaming')}>Gaming</button>
       </div>
 
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9 pt-5 ">
-        {data.map((card, index) => (
+        {filteredData.map((card, index) => (
           <Link to={`/product_detail/${card.id}`} key={card.id} href="#" className="block rounded-lg p-4 shadow-xl shadow-indigo-500 hover:shadow-[#facc15]">
             <img
-              src={card.imgSrc} 
+              src={card.imgSrc}
               alt={card.title}
               className="h-56 w-full rounded-md object-cover"
             />
