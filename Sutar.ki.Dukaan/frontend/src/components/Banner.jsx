@@ -26,8 +26,8 @@ export default function Banner() {
             </div>
           </div>
           <div className="flex justify-center items-center flex-wrap w-full lg:w-2/3 mt-10 md:mt-0">
-            <img className="inline-block mx-auto md:mx-0 p-1 md:p-8 w-80 h-80 transform -rotate-40 rounded-full border-solid border-8 border-#e800ff-500 border-teal-400 hover:border-dotted drop-shadow-2xl" src="https://blenderartists.org/uploads/default/original/4X/f/4/d/f4d966e7afb4eea55e94b3a723e22deb5efba998.jpeg" alt="Banner Image" />
-            <img className="inline-block mt-6 md:mt-0 w-60 h-60 rounded-full border-solid border-8 border-#e800ff-500 border-teal-400 hover:border-dotted" src="https://i.ibb.co/1mJg65B/Untitled-design.png" alt="Banner Image" />
+            <img className="inline-block mx-auto md:mx-0 p-1 md:p-8 w-80 h-80 transform -rotate-40 rounded-full border-solid border-8 border-#e800ff-500 border-teal-400 hover:border-dotted drop-shadow-2xl" src="https://blenderartists.org/uploads/default/original/4X/f/4/d/f4d966e7afb4eea55e94b3a723e22deb5efba998.jpeg" alt="Banner " />
+            <img className="inline-block mt-6 md:mt-0 w-60 h-60 rounded-full border-solid border-8 border-#e800ff-500 border-teal-400 hover:border-dotted" src="https://i.ibb.co/1mJg65B/Untitled-design.png" alt="Image" />
           </div>
         </div>
       </div>

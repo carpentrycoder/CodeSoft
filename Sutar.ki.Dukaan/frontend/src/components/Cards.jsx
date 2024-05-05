@@ -4,6 +4,7 @@ import { cards } from './data';
 
 export default function Cards({ data = cards, setData }) {
   const [filteredData, setFilteredData] = useState(data);
+  const [cartCount, setCartCount] = useState(0);
 
   const filterByCategory = (category) => {
     if (category === '') {
@@ -23,12 +24,19 @@ export default function Cards({ data = cards, setData }) {
     navigate("/CartPage");
   }
 
+  function addToCart() {
+    setCartCount(cartCount + 1); // Increment the count when a product is added to the cart
+  }
+
   return (
-    <div className="container mx-auto p-8 py-8 my-6">
-      <div className="flex flex-col sm:flex-row items-center justify-between">
+    <div className="container mx-auto p-8  my-6">
+      <div className="flex flex-col sm:flex-row items-center justify-between pb-12">
         <h1 className="text-4xl font-bold text-white mb-4 pt-4">Our Products</h1>
-        <button className="text-2xl font-semibold rounded-lg w-24 h-12 py-2 px-4 bg-yellow-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 mt-4 sm:mt-0">
-          Cart
+        <button className=" flex text-2xl font-semibold rounded-lg w-24 h-12 py-2 px-4 bg-yellow-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 mt-4 sm:mt-0" onClick={handleCart}>
+          Cart 
+          <div className="text-xl font-semibold rounded-full w-auto h-auto py-2 px-4 bg-red-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 mt-4 sm:mt-0">
+          {cartCount}
+          </div>
         </button>
       </div>
 
@@ -63,7 +71,7 @@ export default function Cards({ data = cards, setData }) {
               <Link to={`/product_detail/${card.id}`} className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" onClick={handleCart}>
                 View Product
               </Link>
-              <button className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" onClick={handleCart}>
+              <button className="bg-yellow-400 text-black p-2 pb-2 m-2 rounded-md font-bold hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" onClick={addToCart}>
                 Add To Cart
               </button>
               </div>

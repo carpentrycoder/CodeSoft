@@ -1,9 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 
 
 export default function CartPage() {
   const navigate = useNavigate();
+  const [cartItems, setCartItems] = useState([]);
 
   function handleClick() {
     navigate("/Shop");
@@ -35,7 +37,9 @@ export default function CartPage() {
       <div className='flex border-b-2  border-teal-400 px-4 '>
       <img src="https://i.ibb.co/KyC2sm2/Untitled-design-1.png" alt="Untitled-design-1" className=" w-16 h-16" />
       <h2 className="text-4xl mb-2 pt-3 px-3 pl-2 text-teal-400 text-left font-mono font-bold">Your Cart</h2>
-        
+
+      
+
       </div>
     </>
   );
