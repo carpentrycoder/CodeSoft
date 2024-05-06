@@ -5,6 +5,7 @@ import { cards } from './data';
 export default function Cards({ data = cards, setData }) {
   const [filteredData, setFilteredData] = useState(data);
   const [cartCount, setCartCount] = useState(0);
+  //const [Cart, setcart] = useState([]);
 
   const filterByCategory = (category) => {
     if (category === '') {

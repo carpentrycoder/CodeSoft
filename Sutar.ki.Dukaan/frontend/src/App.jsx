@@ -11,7 +11,16 @@ import  { cards }  from "./components/data"; // Changed import statement
 import ProductDetail from "./components/product_detail"; // Corrected import statement
 
 function App() {
-  const [cardData, setData] = useState([...cards]); // const [cartPage,setCartPage] = useState([]);
+  const [cardData, setData] = useState([...cards]); 
+  const [cart, setCart] = useState([]);
+
+  // Function to add item to cart
+  const addToCart = (id) => {
+    const selectedItem = cardData.find(item => item.id === id);
+    if(selectedItem) {
+      setCart([...cart, selectedItem]);
+    }
+  };
 
   return (
     <div className="app">
@@ -20,8 +29,8 @@ function App() {
         <Route path="/Shop" element={<Shop/>} />
         <Route path="/Login" element={<Loginpage />} />
         <Route path="/SignupPage" element={<SignupPage />} />
-        <Route path="/cartPage" element={<CartPage />} />
-        <Route path="/Cards" element={<Cards data={cardData} setData={setData} />} />
+        <Route path="/cartPage" element={<CartPage cart={cart} />} />
+        <Route path="/Cards" element={<Cards data={cardData} setData={setData} cart={cart} addToCart={addToCart} />} />
         <Route path="/product_detail/:id" element={<ProductDetail/>}/>
       </Routes>
     </div>

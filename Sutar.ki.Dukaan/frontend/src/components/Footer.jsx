@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="flex flex-col  bg-gray-900 flex-grow">
       
         <div className="text-center">
-            <h3 className='font-mono text-teal-300 font-bold'>Developed By Sutar</h3>
+            <h3 className='font-sans text-teal-300 font-bold'>Developed By Sutar</h3>
         </div>
         <div className="mt-0 flex flex-col pt-4 pb-4 md:flex-row md:justify-center items-center text-sm text-gray-400">
           <p className="mb-0 md:mb-0">&copy; Sutar 2024.</p>

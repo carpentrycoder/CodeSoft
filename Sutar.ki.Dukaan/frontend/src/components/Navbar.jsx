@@ -24,7 +24,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-3 rtl:space-x-reverse">
             <Link to="/" className="flex items-center space-x-3">
               <img src="https://i.ibb.co/V0ymnXq/logo-removebg-preview.png" alt="logo-removebg-preview" className="h-8" />
-              <span className="self-center text-3xl font-mono text-teal-300 font-bold">SUTAR.KI.DUKAAN</span>
+              <span className="self-center text-3xl font-unica-one-regular text-teal-300 font-bold">SUTAR.KI.DUKAAN</span>
             </Link>
           </div>
           
